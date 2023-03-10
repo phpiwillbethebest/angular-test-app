@@ -3,7 +3,9 @@ import {HttpClient} from "@angular/common/http";
 
 interface User {
   name: string,
-  age: number
+  age: number,
+  id: string,
+  status?: number
 }
 
 @Component({
@@ -23,7 +25,7 @@ export class AppComponent implements OnInit {
   }
   //comment
   addNewData() {
-    this.http.put<User[]>('http://localhost:3000/data', { name: 'Alice', age: 20 })
+    this.http.put<User[]>('http://localhost:3000/data', { name: 'Alice', age: 20, id: '' })
       .subscribe(data => {
         this.tasks = data;
       });
