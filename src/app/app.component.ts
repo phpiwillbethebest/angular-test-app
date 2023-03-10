@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       this.tasks = data;
     });
   }
-
+  //comment
   addNewData() {
     this.http.put<User[]>('http://localhost:3000/data', { name: 'Alice', age: 20 })
       .subscribe(data => {
